@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 
-const getRandomElementArray = (items) => items[Math.floor(Math.random() * items.length)];
+const getRandomElementOfArray = (items) => items[Math.floor(Math.random() * items.length)];
 
-const getRandomValue = (min, max) => {
+const getRandomIntValue = (min, max) => {
   const lowerBorder = Math.ceil(Math.min(min, max));
   const upperBorder = Math.floor(Math.max(min, max));
   return Math.floor(Math.random() * (upperBorder - lowerBorder + 1) + lowerBorder);
@@ -52,4 +52,14 @@ const getMonthAndDate = (date) => dayjs(date).format('MMM DD');
 
 const getFullDate = (date) => dayjs(date).format('DD/MM/YY HH:mm');
 
-export { getRandomElementArray, getRandomValue, getTwoRandomDates, getDateDifference, getTime, getMonthAndDate, getFullDate };
+function isEscapeKey(evt) {
+  return evt.key === 'Escape';
+}
+
+const isPastEvent = (date) => dayjs(date).isBefore(dayjs());
+
+const isPresentEvent = (dateFrom, dateTo) => dayjs(dateFrom).isBefore(dayjs()) && dayjs(dateTo).isAfter(dayjs());
+
+const isFutureEvent = (date) => dayjs(date).isAfter(dayjs());
+
+export { getRandomElementOfArray, getRandomIntValue, getTwoRandomDates, getDateDifference, getTime, getMonthAndDate, getFullDate, isEscapeKey, isFutureEvent, isPastEvent, isPresentEvent };
