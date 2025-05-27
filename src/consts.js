@@ -77,7 +77,7 @@ const FLATPICKR_CONFIG = {
 
 const AUTHORIZATION = 'Basic fra114a3i8a7t0rr';
 
-const END_POINT = 'https://21.objects.htmlacademy.pro/big-trip';
+const END_POINT = 'https://24.objects.htmlacademy.pro/big-trip';
 
 const CITIES_LENGTH_BORDER = 3;
 
